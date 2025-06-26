@@ -204,11 +204,11 @@ sliding_window_concat_inst (
     .o_concat_frame (w_concat_frame), 
     .o_valid_frame  (w_write_enable));
 
-sliding_window_ram # (
+dual_port_RAM3D # (
     .P       (P      ),
     .NP      (NP     ),
     .NB_DATA (NB_DATA))
-sliding_window_ram_inst (
+dual_port_RAM3D_inst (
     .clock       (clock         ),
     .i_wenable   (w_write_enable), 
     .i_enable    (i_enable      ),
@@ -217,37 +217,32 @@ sliding_window_ram_inst (
     .i_data      (w_concat_frame),
     .o_data      (w_ram_dataout ));
 
-windows_LUT windows_LUT_inst (
-    .i_sel          (i_sel        ),
-    .o_window_16    (w_window_16  ),
-    .o_window_32    (w_window_32  ),
-    .o_window_64    (w_window_64  ),
-    .o_window_128   (w_window_128 ),
-    .o_window_256   (w_window_256 ),
-    .o_window_512   (w_window_512 ),
-    .o_window_1024  (w_window_1024));
+window_selector_LUT # (
+    .NP (NP))
+window_selector_LUT_inst (
+    .i_NFFT_sel (i_NFFT_sel    ),
+    .i_WIND_sel (i_window_sel  ),
+    .o_window   (w_window_coeff));
 
 FFT_xfft_0_2 xfft_0 (
-    .aclk                          (clock               ), 
-    .event_data_in_channel_halt    (                    ), // Asserted on every cycle where the core needs data from the Data Input channel and no data is available
-    .event_data_out_channel_halt   (                    ), // Asserted on every cycle where the core needs to write data to the Data Output channel but cannot because the buffers in the channel are full
-    .event_frame_started           (                    ), // Asserted for a single clock cycle when the core starts to process a new frame
-    .event_status_channel_halt     (                    ), // Asserted on every cycle where the core needs to write data to the Status channel but cannot because the buffers on the channel are full
-    .event_tlast_missing           (                    ), // Asserted for a single clock cycle when s_axis_data_tlast is Low on a last incoming data sample of a frame
-    .event_tlast_unexpected        (                    ), // Asserted for a single clock cycle when the core sees s_axis_data_tlast High on any incoming data sample that is not the last one in a frame
-    .m_axis_data_tdata             (o_m_axis_data_tdata ),
-    .m_axis_data_tlast             (o_m_axis_data_tlast ),
-    .m_axis_data_tready            (o_m_axis_data_tready),
-    .m_axis_data_tvalid            (o_m_axis_data_tvalid),
-    .s_axis_config_tdata           (s_axis_config_tdata ),
-    .s_axis_config_tready          (s_axis_config_tready),
-    .s_axis_config_tvalid          (s_axis_config_tvalid),
-    .s_axis_data_tdata             (r_fft_data_in       ),
-    .s_axis_data_tlast             (s_axis_data_tlast   ),
-    .s_axis_data_tready            (s_axis_data_tready  ),
-    .s_axis_data_tvalid            (s_axis_data_tvalid  )); 
+    .aclk                          (clock                        ), 
+    .event_data_in_channel_halt    (o_event_data_in_channel_halt ), // Asserted on every cycle where the core needs data from the Data Input channel and no data is available
+    .event_data_out_channel_halt   (o_event_data_out_channel_halt), // Asserted on every cycle where the core needs to write data to the Data Output channel but cannot because the buffers in the channel are full
+    .event_frame_started           (o_event_frame_started        ), // Asserted for a single clock cycle when the core starts to process a new frame
+    .event_status_channel_halt     (o_event_status_channel_halt  ), // Asserted on every cycle where the core needs to write data to the Status channel but cannot because the buffers on the channel are full
+    .event_tlast_missing           (o_event_tlast_missing        ), // Asserted for a single clock cycle when s_axis_data_tlast is Low on a last incoming data sample of a frame
+    .event_tlast_unexpected        (o_event_tlast_unexpected     ), // Asserted for a single clock cycle when the core sees s_axis_data_tlast High on any incoming data sample that is not the last one in a frame
+    .m_axis_data_tdata             (o_m_axis_data_tdata          ),
+    .m_axis_data_tlast             (o_m_axis_data_tlast          ),
+    .m_axis_data_tready            (o_m_axis_data_tready         ),
+    .m_axis_data_tvalid            (o_m_axis_data_tvalid         ),
+    .s_axis_config_tdata           (s_axis_config_tdata          ),
+    .s_axis_config_tready          (s_axis_config_tready         ),
+    .s_axis_config_tvalid          (s_axis_config_tvalid         ),
+    .s_axis_data_tdata             (r_fft_data_in                ),
+    .s_axis_data_tlast             (s_axis_data_tlast            ),
+    .s_axis_data_tready            (s_axis_data_tready           ),
+    .s_axis_data_tvalid            (s_axis_data_tvalid           )); 
 
-    asserted on every clock cycle when an overflow is seen in the data
-samples being transferred on m_axis_data_tdata
 
 endmodule
