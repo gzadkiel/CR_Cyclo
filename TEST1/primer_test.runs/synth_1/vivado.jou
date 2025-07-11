@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Jul  6 20:47:47 2025
+# Process ID: 21956
+# Current directory: C:/Users/gm/Vivado Projects/primer_test/primer_test.runs/synth_1
+# Command line: vivado.exe -log first_stage_control.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source first_stage_control.tcl
+# Log file: C:/Users/gm/Vivado Projects/primer_test/primer_test.runs/synth_1/first_stage_control.vds
+# Journal file: C:/Users/gm/Vivado Projects/primer_test/primer_test.runs/synth_1\vivado.jou
+# Running On: Geronimo, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 6, Host memory: 16961 MB
+#-----------------------------------------------------------
+source first_stage_control.tcl -notrace

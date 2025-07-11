@@ -1,0 +1,62 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_Layers":"/xfft_0_event_data_out_channel_halt:true|/xfft_0_event_data_in_channel_halt:true|/xfft_0_event_frame_started:true|/xfft_0_event_status_channel_halt:true|/xfft_0_event_tlast_unexpected:true|/aclk_0_1:true|/xfft_0_event_tlast_missing:true|",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-342,-63",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeInterrupt":"true",
+   "Display-PortTypeOthers":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Interfaces View_Layers":"/xfft_0_event_data_out_channel_halt:false|/xfft_0_event_data_in_channel_halt:false|/xfft_0_event_frame_started:false|/xfft_0_event_status_channel_halt:false|/xfft_0_event_tlast_unexpected:false|/aclk_0_1:false|/xfft_0_event_tlast_missing:false|",
+   "Interfaces View_ScaleFactor":"1.0",
+   "Interfaces View_TopLeft":"-407,-158",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
+#  -string -flagsOSRD
+preplace port M_AXIS_DATA_0 -pg 1 -lvl 2 -x 470 -y 90 -defaultsOSRD
+preplace port S_AXIS_CONFIG_0 -pg 1 -lvl 0 -x -10 -y 200 -defaultsOSRD
+preplace port S_AXIS_DATA_0 -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
+preplace port port-id_aclk_0 -pg 1 -lvl 0 -x -10 -y 280 -defaultsOSRD
+preplace port port-id_event_data_in_channel_halt_0 -pg 1 -lvl 2 -x 470 -y 270 -defaultsOSRD
+preplace port port-id_event_data_out_channel_halt_0 -pg 1 -lvl 2 -x 470 -y 290 -defaultsOSRD
+preplace port port-id_event_frame_started_0 -pg 1 -lvl 2 -x 470 -y 190 -defaultsOSRD
+preplace port port-id_event_status_channel_halt_0 -pg 1 -lvl 2 -x 470 -y 250 -defaultsOSRD
+preplace port port-id_event_tlast_missing_0 -pg 1 -lvl 2 -x 470 -y 230 -defaultsOSRD
+preplace port port-id_event_tlast_unexpected_0 -pg 1 -lvl 2 -x 470 -y 210 -defaultsOSRD
+preplace port port-id_s_axis_data_tlast_0 -pg 1 -lvl 0 -x -10 -y 140 -defaultsOSRD
+preplace port port-id_s_axis_data_tready_0 -pg 1 -lvl 2 -x 470 -y 30 -defaultsOSRD
+preplace port port-id_s_axis_data_tvalid_0 -pg 1 -lvl 0 -x -10 -y 180 -defaultsOSRD
+preplace port port-id_m_axis_data_tvalid_0 -pg 1 -lvl 2 -x 470 -y 170 -defaultsOSRD
+preplace port port-id_m_axis_data_tready_0 -pg 1 -lvl 0 -x -10 -y 20 -defaultsOSRD
+preplace port port-id_m_axis_data_tlast_0 -pg 1 -lvl 2 -x 470 -y 130 -defaultsOSRD
+preplace port port-id_s_axis_config_tready_0 -pg 1 -lvl 2 -x 470 -y 350 -defaultsOSRD
+preplace port port-id_s_axis_config_tvalid_0 -pg 1 -lvl 0 -x -10 -y 260 -defaultsOSRD
+preplace portBus s_axis_data_tdata_0 -pg 1 -lvl 0 -x -10 -y 120 -defaultsOSRD
+preplace portBus m_axis_data_tdata_0 -pg 1 -lvl 2 -x 470 -y 110 -defaultsOSRD
+preplace portBus s_axis_config_tdata_0 -pg 1 -lvl 0 -x -10 -y 220 -defaultsOSRD
+preplace inst xfft_0 -pg 1 -lvl 1 -x 230 -y 190 -defaultsOSRD
+preplace netloc aclk_0_1 1 0 1 NJ 280
+preplace netloc m_axis_data_tready_0_1 1 0 2 NJ 20 450
+preplace netloc s_axis_config_tdata_0_1 1 0 1 NJ 220
+preplace netloc s_axis_config_tvalid_0_1 1 0 1 NJ 260
+preplace netloc s_axis_data_tdata_0_1 1 0 1 NJ 120
+preplace netloc s_axis_data_tlast_0_1 1 0 1 NJ 140
+preplace netloc s_axis_data_tvalid_0_1 1 0 1 NJ 180
+preplace netloc xfft_0_event_data_in_channel_halt 1 1 1 NJ 270
+preplace netloc xfft_0_event_data_out_channel_halt 1 1 1 NJ 290
+preplace netloc xfft_0_event_frame_started 1 1 1 NJ 190
+preplace netloc xfft_0_event_status_channel_halt 1 1 1 NJ 250
+preplace netloc xfft_0_event_tlast_missing 1 1 1 NJ 230
+preplace netloc xfft_0_event_tlast_unexpected 1 1 1 NJ 210
+preplace netloc xfft_0_m_axis_data_tdata 1 1 1 NJ 110
+preplace netloc xfft_0_m_axis_data_tlast 1 1 1 NJ 130
+preplace netloc xfft_0_m_axis_data_tvalid 1 1 1 NJ 170
+preplace netloc xfft_0_s_axis_config_tready 1 0 2 10 350 NJ
+preplace netloc xfft_0_s_axis_data_tready 1 0 2 10 30 NJ
+preplace netloc S_AXIS_CONFIG_0_1 1 0 1 NJ 200
+preplace netloc S_AXIS_DATA_0_1 1 0 1 NJ 100
+preplace netloc xfft_0_M_AXIS_DATA 1 1 1 NJ 90
+levelinfo -pg 1 -10 230 470
+pagesize -pg 1 -db -bbox -sgen -260 0 730 370
+"
+}
+0

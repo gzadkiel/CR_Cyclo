@@ -1,0 +1,43 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Jul  6 20:47:47 2025
+# Process ID: 21956
+# Current directory: C:/Users/gm/Vivado Projects/primer_test/primer_test.runs/synth_1
+# Command line: vivado.exe -log first_stage_control.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source first_stage_control.tcl
+# Log file: C:/Users/gm/Vivado Projects/primer_test/primer_test.runs/synth_1/first_stage_control.vds
+# Journal file: C:/Users/gm/Vivado Projects/primer_test/primer_test.runs/synth_1\vivado.jou
+# Running On: Geronimo, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 6, Host memory: 16961 MB
+#-----------------------------------------------------------
+source first_stage_control.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
+Command: synth_design -top first_stage_control -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 21096
+INFO: [Synth 8-11241] undeclared symbol 'r_x_re0', assumed default net type 'wire' [D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/fist_stage_control.sv:211]
+INFO: [Synth 8-11241] undeclared symbol 'r_x_im0', assumed default net type 'wire' [D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/fist_stage_control.sv:212]
+INFO: [Synth 8-11241] undeclared symbol 'w_ram_dataout', assumed default net type 'wire' [D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/fist_stage_control.sv:227]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1301.277 ; gain = 409.480
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'first_stage_control' [D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/fist_stage_control.sv:1]
+ERROR: [Synth 8-27] procedural assign not supported [D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/fist_stage_control.sv:69]
+ERROR: [Synth 8-6156] failed synthesizing module 'first_stage_control' [D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/fist_stage_control.sv:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1409.430 ; gain = 517.633
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+13 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Jul  6 20:48:03 2025...

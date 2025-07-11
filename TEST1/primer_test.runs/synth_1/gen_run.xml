@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1751845531">
+  <File Type="PA-TCL" Name="first_stage_control.tcl"/>
+  <File Type="REPORTS-TCL" Name="first_stage_control_reports.tcl"/>
+  <File Type="RDS-RDS" Name="first_stage_control.vds"/>
+  <File Type="RDS-UTIL" Name="first_stage_control_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="first_stage_control_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="first_stage_control.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/x_fft0/x_fft0.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog/input_window.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/input_window.v"/>
+        <Attr Name="ImportTime" Val="1751387041"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog/sliding_window_concat.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/sliding_window_concat.v"/>
+        <Attr Name="ImportTime" Val="1750958551"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog/windows_selector_LUT.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/windows_selector_LUT.v"/>
+        <Attr Name="ImportTime" Val="1751584458"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Verilog/dual_port_RAM3D.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/dual_port_RAM3D.sv"/>
+        <Attr Name="ImportTime" Val="1750877684"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/fist_stage_control.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="D:/Desktop PRE-FORMAT 25/CR_CYCLO/Verilog/complex_signal_generator.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="first_stage_control"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="x_fft0_xfft_0_0"/>
+</GenRun>
